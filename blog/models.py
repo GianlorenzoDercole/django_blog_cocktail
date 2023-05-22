@@ -1,6 +1,6 @@
 from django.db import models
 
-from django.core.validators import MinLenghtValidator
+from django.core.validators import MinLengthValidator
 
 # Create your models here.
 
@@ -21,6 +21,6 @@ class Post(models.Model):
     slug = models.SlugField(unique=True, db_index=True)
     content = models.TextField(validators=[MinLengthValidator(10)])
     # one to many with author
-    author = models.ForeignKey(Author, on_delete=models.SET_NULL, related_name="posts")
+    author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, related_name="posts")
     # many to many with tag
     tags = models.ManyToManyField(Tag)
