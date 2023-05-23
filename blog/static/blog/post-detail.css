@@ -47,6 +47,11 @@ body {
     font-weight: bold;
   }
 
+  #summary a {
+      color:white;
+      text-transform: none;
+  }
+
   #summary time {
     font-weight: bold;
   }
